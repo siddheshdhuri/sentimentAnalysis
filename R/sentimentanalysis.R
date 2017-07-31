@@ -3,12 +3,12 @@
 #######################################################################################
 
 # loading packages
-library(tidyverse)
-library(text2vec)
-library(caret)
-library(glmnet)
-library(ggrepel)
-library(purrrlyr)
+#library(tidyverse)
+#library(text2vec)
+#library(caret)
+#library(glmnet)
+#library(ggrepel)
+#library(purrrlyr)
 
 getSentimentAnalysis <- function(tweets.df, time.break = "day"){
 
@@ -356,7 +356,7 @@ getSentimentAnalysisDF <- function(df_tweets, glmnet_classifier=NULL) {
 
   df_tweets %>%
   # converting some symbols
-  dmap_at('text', conv_fun)
+  purrrlyr::dmap_at('text', conv_fun)
 
   ##### doc2vec #####
   # define preprocessing function and tokenization function
